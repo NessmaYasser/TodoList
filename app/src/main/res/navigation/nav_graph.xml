@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/todoListFragmentFragment">
+
+    <fragment
+        android:id="@+id/todoListFragmentFragment"
+        android:name="com.example.mytodos.ui.todoList.TodoListFragment"
+        android:label="Today TodoList">
+        <action
+            android:id="@+id/action_todoListFragmentFragment_to_addTodoTaskFragment"
+            app:destination="@id/addTodoTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTodoTaskFragment"
+        android:name="com.example.mytodos.ui.todoTask.AddTodoTaskFragment"
+        android:label="MyTask">
+
+        <argument
+            android:name="myTask"
+            android:defaultValue="@null"
+            app:argType="com.example.mytodos.model.MyTodoItem"
+            app:nullable="true" />
+
+    </fragment>
+</navigation>
